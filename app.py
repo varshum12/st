@@ -26,22 +26,6 @@ def get_chart(get_):
 if company:
     company_data = get_symbol(company)
 
-    if company_data:
-        symbol = list(company_data.keys())
-        options  = st.selectbox(selected_symbol)
-        selected_data = company_data.get(options)
-        st.success(selected_data[0])
-        st.success(selected_data[1])
-        st.success(selected_data[2])
-
-        submit = st.button("plot" , type = "primary")
-
-        if submit :
-            fig = get_chart(selected_data)
-            st.plotly_chart(fig)
-
-    else:
-        st.error('The given company name is not exists')
-
+    
 
 
